@@ -1,24 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
+import InputRange from './component/InputRange';
+
 function App() {
+
+  let gibridStyles = `height:2px;`;
+
+  let sliderStyles = `background:#000;border-color:#000;`;
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <InputRange
+        minLength={1}
+        maxLength={500}
+        delemiter={5}
+        activeColor="green"
+        opacityColor="black"
+        value={50}
+        onChange={e => console.log(e.target.value)}
+        gibridStyles={gibridStyles}
+        sliderStyles={sliderStyles}
+      />
     </div>
   );
 }
